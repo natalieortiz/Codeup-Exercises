@@ -4,8 +4,8 @@ $start = $argv[1];
 $end = $argv[2];
 $increment = 1;
 
-//checks to make sure that input is a number. 
-if (is_numeric($argv[1]) == false || is_numeric($argv[2]) == false) {
+//checks to make sure that input is a number.
+if (ctype_digit($argv[1]) == false || ctype_digit($argv[2]) == false) {
 	echo "Please enter whole numbers!\n";
 }
 
