@@ -21,3 +21,10 @@ foreach ($things as $item) {
 // 		echo "{$item} is a string.\n";
 // 	}
 // }	
+
+foreach ($things as $item) {
+	if (is_scalar($item)){
+		echo "{$item} is a scalar.\n";
+	}
+}
+
