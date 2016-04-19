@@ -1,44 +1,56 @@
 <?php
 
-//Given global variables. The functions will work if you use global variables. 
-
-
 function add($a, $b)
 {
-    return $a + $b . PHP_EOL;
+	if (is_numeric($a) && is_numeric($b)){
+	    return $a + $b . PHP_EOL;	
+	}
+	else {
+		return "Both values must be numeric!\n";
+	}
 }
 
 function subtract($a, $b)
 {
-    return $a - $b . PHP_EOL; 
+	if (is_numeric($a) && is_numeric($b)){
+	    return $a - $b . PHP_EOL; 	
+	} else {
+		return "Both values must be numeric!\n";
+	}
 }
 
 function multiply($a, $b)
-{
-	return $a * $b . PHP_EOL; 	
+{	
+	if (is_numeric($a) && is_numeric($b)) {
+		return $a * $b . PHP_EOL; 	
+	} else {
+		return "Both values must be numeric!\n";
+	}
 }
 
 function divide($a, $b)
 {
-    return $a / $b . PHP_EOL; 
+	if ($b == 0){
+		return "Please do not divide by zero.\n";
+	} else if (is_numeric($a) && is_numeric($b)) {
+		return $a / $b . PHP_EOL; 	
+	} else {
+		return "Both values must be numeric!";
+	}
 }
 
 function modulus($a, $b)
 {
-    return $a % $b . PHP_EOL; 
+    if (is_numeric($a) && is_numeric($b)) {
+		return $a % $b . PHP_EOL; 	
+	} else {
+		return "Both values must be numeric!\n";
+	}
 }
 
-$a = 20;
-$b = 25;
-
-echo add($a,$b);
-echo subtract($a,$b);
-echo multiply($a,$b);
-echo divide($a,$b);
-echo modulus($a,$b);
 
 echo add(12,3);
-echo subtract(12,3);
+echo subtract('hi',3);
 echo multiply(12,3);
-echo divide(12,3);
+echo divide(12,0);
 echo modulus(12,3);
