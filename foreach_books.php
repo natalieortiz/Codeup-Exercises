@@ -24,9 +24,11 @@ $books = array(
 );
 
 foreach($books as $title => $book){
-	echo "Title: {$title}\n";
-	echo "Year: {$book['published']}\n";
-	echo "Author: {$book['author']}\n";
-	echo "Pages: {$book['pages']}\n";
-	echo "=============================\n";
+	if ($book['published'] > 1950){
+		echo "Title: {$title}\n";
+		echo "Year: {$book['published']}\n";
+		echo "Author: {$book['author']}\n";
+		echo "Pages: {$book['pages']}\n";
+		echo "=============================\n";
+	}
 }
