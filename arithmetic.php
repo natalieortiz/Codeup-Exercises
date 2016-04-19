@@ -2,22 +2,25 @@
 
 function add($a, $b)
 {
-    return $a + $b;
+    echo $a + $b . PHP_EOL;
 }
 
 function subtract($a, $b)
 {
-    // Add code here
+    echo $a - $b . PHP_EOL; 
 }
 
 function multiply($a, $b)
 {
-    // Add code here
+	echo $a * $b . PHP_EOL; 	
 }
 
 function divide($a, $b)
 {
-    // Add code here
+    echo $a / $b . PHP_EOL; 
 }
 
-// Add code to test your functions here
+add(15,15);
+subtract(15,15);
+multiply(15,15);
+divide(15,15);
