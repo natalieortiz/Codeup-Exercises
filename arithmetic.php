@@ -1,5 +1,10 @@
 <?php
 
+//Given global variables.  PHP will ignore these because we are already passing values to the functions.
+
+$a = 20;
+$b = 25;
+
 function add($a, $b)
 {
     echo $a + $b . PHP_EOL;
