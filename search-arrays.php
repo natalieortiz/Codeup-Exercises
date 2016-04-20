@@ -7,9 +7,9 @@ $compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
 function searchArray($name, $array)
 {
 	if (array_search($name, $array) !== false){
-		return "TRUE";
+		return true;
 	} else {
-		return "FALSE";
+		return false;
 	}
 	
 }
@@ -18,13 +18,13 @@ function compareArrays($array1, $array2)
 {	
 	$count = 0;
 	foreach($array1 as $name){
-		if (array_search($name, $array2) !== false){
+		if (searchArray($name, $array2)){
 			$count++;
 		}	
 	}
 	return $count; 
 }
 
-echo searchArray('Tina',$names) . PHP_EOL;
-echo searchArray('Bob',$names) . PHP_EOL;
+var_dump (searchArray('Tina',$names));
+var_dump (searchArray('Bob',$names));
 echo compareArrays($names, $compare) . PHP_EOL;
