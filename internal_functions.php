@@ -4,8 +4,12 @@
 
 function inspect($data) 
 {
-	if (is_string($data) && ($data == '')){
-		return "The string is empty.";
+	if (is_string($data)){
+		if (empty($data)){
+			return "The string is empty.";
+		} else {
+			return "The string is \"{$data}\".";
+		}
 	} else if  (is_int($data)){
 		return "The integer is {$data}.";
 	} else if (is_float($data)){
@@ -24,9 +28,7 @@ function inspect($data)
 		} else {
 			return "The value is FALSE.";
 		}
-	} else if (is_string($data)){
-		return "The string is \"{$data}\".";
-	}
+	} 
 }
 
 // Do not mofify these variables!
