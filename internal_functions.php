@@ -9,7 +9,7 @@ function inspect($data)
 	} else if  (is_int($data)){
 		return "The integer is {$data}.";
 	} else if (is_float($data)){
-		return "The float number is {$data}."; 
+		return "The float is {$data}."; 
 	} else if (is_null($data)) {
 		return "The value is NULL.";
 	} else if (is_array($data)){
