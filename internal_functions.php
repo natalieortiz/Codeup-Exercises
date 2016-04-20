@@ -13,7 +13,11 @@ function inspect($data)
 	} else if (is_null($data)) {
 		return "The value is NULL.";
 	} else if (is_array($data)){
-		return "The value is an array.";
+		if (empty($data)){
+			return "The value is an empty array.";
+		} else {
+			return "The value is an array.";
+		}
 	} else if (is_bool($data)) {
 		if ($data == 1){
 			return "The value is TRUE.";
