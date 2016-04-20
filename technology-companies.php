@@ -49,12 +49,23 @@ $companies = [
 // ksort($companies);
 // print_r($companies);
 
+//Steps to solving #4. 
 
-foreach ($companies as $company => $employee){
-    sort($employee);
-    $companies[$company] = $employee; 
+$employees = $companies['Be Inc'];
+sort($employees);
+
+$companies['Be Inc'] = $employees;
+
+// foreach ($companies as $employees)
+// {
+//     sort($employees);
+//     print_r($employees); 
+// }
+
+foreach ($companies as $companyName => $employees){
+    sort($employees);
+    $companies[$companyName] = $employees; 
 } 
-
 
 print_r($companies);
 ksort($companies);
@@ -62,4 +73,3 @@ print_r($companies);
 
 arsort($companies);
 print_r($companies);
-
