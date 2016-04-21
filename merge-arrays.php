@@ -36,7 +36,6 @@ function combineArrays($array1, $array2){
 		}
 
 	}
-
 	return $newArray;
 }
 
