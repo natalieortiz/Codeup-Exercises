@@ -28,3 +28,6 @@ function compareArrays($array1, $array2)
 var_dump (searchArray('Tina',$names));
 var_dump (searchArray('Bob',$names));
 echo compareArrays($names, $compare) . PHP_EOL;
+
+// $items[]= 'last thing';
+// $items[8] = 'one thing';
