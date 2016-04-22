@@ -27,6 +27,7 @@ function parseContacts($filename)
 
 function parseNumber($string)
 {
+	//parsing phone number from "1234567890" format to "123-456-7890" format. 
 	$newPhone = substr($string, 0, 3) . "-" . substr($string, 3, 3) . "-" . substr($string, 6, 4);
 	return $newPhone;
 }
