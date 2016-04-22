@@ -31,4 +31,4 @@ function parseNumber($string)
 	return $newPhone;
 }
 
-var_dump(parseContacts('contacts.txt'));
+print_r(parseContacts('contacts.txt'));
