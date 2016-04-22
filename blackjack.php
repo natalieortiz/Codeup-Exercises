@@ -33,7 +33,13 @@ function cardIsAce($card) {
 // face cards are worth 10
 // numeric cards are worth their value
 function getCardValue($card) {
-  // todo
+	if (stristr($card, 'A') !== false){
+		$value = 11; 
+  	}	else if (stristr($card, 'J') !== false || stristr($card, 'Q') !== false || stristr($card, 'K') !== false){
+  		$value = 10;
+  	}	else {
+  		$value 
+  	}
 }
 // get total value for a hand of cards
 // don't forget to factor in aces
