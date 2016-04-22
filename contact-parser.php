@@ -11,13 +11,24 @@ function parseContacts($filename)
 
     array_pop($contacts);
     fclose($handle); 
-    for ($i = 0; $i < sizeof($contacts); $i++){
-    	$personalInfo = explode("|", $contacts[$i]);
-    	$contacts[$i] = $personalInfo;
+
+    foreach ($contacts as $key => $value){
+    	//Exploding new line into array.
+    	$personalInfo = explode("|", $contacts[$key]);
+    	//Assigning index array values to another new associative array. 
+    	$parsedContacts[$key]['name'] = $personalInfo[0];
+    	//Parsing phone number from indexed array before assigning to new array.
+    	$personalInfo[1] = parseNumber($personalInfo[1]);
+    	//Assigning parsed phone number into new array that is being returned.
+    	$parsedContacts[$key]['number'] = $personalInfo[1];
     }
+    return $parsedContacts;
+}
 
-
-    return $contacts;
+function parseNumber($string)
+{
+	$newPhone = substr($string, 0, 3) . "-" . substr($string, 3, 3) . "-" . substr($string, 6, 4);
+	return $newPhone;
 }
 
 var_dump(parseContacts('contacts.txt'));
