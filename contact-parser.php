@@ -13,14 +13,18 @@ function parseContacts($filename)
     fclose($handle); 
 
     foreach ($contacts as $key => $value){
-    	//Exploding new line into array.
-    	$personalInfo = explode("|", $contacts[$key]);
-    	//Assigning index array values to another new associative array. 
-    	$parsedContacts[$key]['name'] = $personalInfo[0];
+    	//Exploding new line into temporary(copy) array.
+    	$tempArray = explode("|", $contacts[$key]);
+    	
+    	//Assigning index array values from the copy array to another new associative array which will be returned.
+    	//Taking the first value(name) from the tempArray and assigning to parsedContacts array.  
+    	$parsedContacts[$key]['name'] = $tempArray[0];
+    	
     	//Parsing phone number from indexed array before assigning to new array.
-    	$personalInfo[1] = parseNumber($personalInfo[1]);
+    	$tempArray[1] = parseNumber($tempArray[1]);
+    	
     	//Assigning parsed phone number into new array that is being returned.
-    	$parsedContacts[$key]['number'] = $personalInfo[1];
+    	$parsedContacts[$key]['number'] = $tempArray[1];
     }
     return $parsedContacts;
 }
