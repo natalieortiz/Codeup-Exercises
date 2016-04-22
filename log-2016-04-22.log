@@ -1,0 +1,9 @@
+
+2016-04-2206:42:16INFO This is an info message.
+2016-04-2206:42:16ERROR This is an info message.
+2016-04-2206:43:30 INFO This is an info message.
+2016-04-2206:43:30 ERROR This is an info message.
+2016-04-2206:54:56 INFO This is an info message.
+2016-04-2206:54:56 ERROR This is an info message.
+2016-04-2206:54:56 INFO This is some important info
+2016-04-2206:54:56 ERROR This did not work
