@@ -9,7 +9,8 @@ $cards = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 // build a deck (array) of cards
 // card values should be "VALUE SUIT". ex: "7 H"
 // make sure to shuffle the deck before returning it
-function buildDeck($suits, $cards) {
+function buildDeck($suits, $cards) 
+{
 	$deck = [];
 	foreach ($cards as $key => $value){
 		for ($i = 0 ; $i < sizeof($suits) ; $i++){
@@ -20,7 +21,8 @@ function buildDeck($suits, $cards) {
 }
 // determine if a card is an ace
 // return true for ace, false for anything else
-function cardIsAce($card) {
+function cardIsAce($card) 
+{
 	if (stristr($card, 'A') == false){
 		return false; 
 	} else {
@@ -32,7 +34,8 @@ function cardIsAce($card) {
 // aces are worth 11
 // face cards are worth 10
 // numeric cards are worth their value
-function getCardValue($card) {
+function getCardValue($card) 
+{
 	if (stristr($card, 'A') !== false){
 		$value = 11; 
   	}	else if (stristr($card, 'J') !== false || stristr($card, 'Q') !== false || stristr($card, 'K') !== false){
