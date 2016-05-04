@@ -2,26 +2,44 @@
 
 class Log
 {	
-	public $filename; 
+	public static $filename; 
 
-	public function logMessage ($logLevel, $message)
+	public static $handle; 
+
+	public static function openFile($prefix = "log")
+	{
+		self::$filename = $prefix . '-' . date('Y-m-d') . ".log";
+		self::$handle = fopen(self::$filename, 'a');
+		
+	}
+
+	public static function logMessage ($logLevel, $message = 'This was left blank')
 	{	
-		$date = date('Y-m-d');
-		$this->filename = "log " . $date . ".log";
-		$handle = fopen($this->filename, 'a');
-		fwrite($handle, PHP_EOL . $date . " " . date('H:i:s'). $logLevel . " " . $message);
-		fclose($handle);
+		self::openFile();
+		fwrite(self::$handle, PHP_EOL . date('Y-m-d h:i:s'). " " . $logLevel . " " . $message);
+		self::closeFile();
+
 	}
 
-	public function logInfo($string)
-	{
-		$this->logMessage("INFO", $string);
+	public static function logInfo($message)
+	{	
+		//$this-> allows you to grab a function inside the class. 
+		self::logMessage("INFO", $message);
 	}
 
-	public function logError($string)
+	public static function logError($message)
 	{
-		$this->logMessage("ERROR",$string);
+		self::logMessage("ERROR",$message);
+	}
+
+	public static function closeFile()
+	{
+		fclose(self::$handle);
 	}
 }
 
+//objects bundle state and behavior.
+//objects are state and behavior. 
+//behavior are methods that modify that state. 
+//constructor - there is no object and all of a sudden there is an object created. 
  ?>
