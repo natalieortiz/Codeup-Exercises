@@ -13,14 +13,14 @@ class Square extends Rectangle
 
 	public function perimeter()
 	{
-		$perimeter = $this->height * 4;
+		$perimeter = $this->getHeight() * 4;
 		return $perimeter;
 	}
 
 	public function area()
 	{
-		
-		$area = $this->height * $this->height;
+		echo 'from square';
+		$area = $this->getHeight() * $this->getHeight();
 		return $area; 
 
 	}

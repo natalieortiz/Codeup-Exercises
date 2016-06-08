@@ -2,13 +2,23 @@
 
 class Log
 {	
-	public static $filename; 
+	protected static $filename; 
 
-	public static $handle; 
+	protected static $handle; 
+
+
+	protected static function setFilename($prefix)
+	{
+		// if (!is_string($filename)){
+		// 	echo "Filename must be a string.";
+		// 	die();
+		// }
+		self::$filename = strval($prefix) . '-' . date('Y-m-d') . ".log";
+	}
 
 	public static function openFile($prefix = "log")
 	{
-		self::$filename = $prefix . '-' . date('Y-m-d') . ".log";
+		self::setFilename($prefix);
 		self::$handle = fopen(self::$filename, 'a');
 		
 	}
